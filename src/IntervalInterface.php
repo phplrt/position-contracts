@@ -9,25 +9,22 @@
 
 declare(strict_types=1);
 
-namespace Phplrt\Position;
+namespace Phplrt\Contracts\Position;
 
-/**
- * Interface PositionInterface
- */
-interface PositionInterface
+interface IntervalInterface
 {
     /**
-     * @return int
+     * @return PositionInterface
      */
-    public function getOffset(): int;
+    public function getFrom(): PositionInterface;
+
+    /**
+     * @return PositionInterface
+     */
+    public function getTo(): PositionInterface;
 
     /**
      * @return int
      */
-    public function getLine(): int;
-
-    /**
-     * @return int
-     */
-    public function getColumn(): int;
+    public function getLength(): int;
 }
