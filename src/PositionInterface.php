@@ -14,17 +14,17 @@ namespace Phplrt\Contracts\Position;
 interface PositionInterface
 {
     /**
-     * @var positive-int
+     * @var int<1, max>
      */
     public const MIN_LINE = 1;
 
     /**
-     * @var positive-int
+     * @var int<1, max>
      */
     public const MIN_COLUMN = 1;
 
     /**
-     * @var positive-int|0
+     * @var int<0, max>
      */
     public const MIN_OFFSET = 0;
 
@@ -33,21 +33,21 @@ interface PositionInterface
      *
      * Equivalent to the amount from a line and a column.
      *
-     * @return positive-int|0
+     * @return int<0, max>
      */
     public function getOffset(): int;
 
     /**
      * Returns the position line.
      *
-     * @return positive-int
+     * @return int<1, max>
      */
     public function getLine(): int;
 
     /**
      * Returns the position column.
      *
-     * @return positive-int
+     * @return int<1, max>
      */
     public function getColumn(): int;
 }
