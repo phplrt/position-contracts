@@ -7,13 +7,11 @@ namespace Phplrt\Contracts\Position\Tests;
 use Phplrt\Contracts\Position\PositionFactoryInterface;
 use Phplrt\Contracts\Position\PositionInterface;
 use Phplrt\Contracts\Source\ReadableInterface;
-use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Note: Changing the behavior of these tests is allowed ONLY when updating
  *       a MAJOR version of the package.
  */
-#[Group('phplrt/position-contracts')]
 class CompatibilityTest extends TestCase
 {
     public function testPositionFactoryCompatibility(): void
