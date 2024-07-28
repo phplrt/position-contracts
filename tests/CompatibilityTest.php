@@ -20,14 +20,11 @@ class CompatibilityTest extends TestCase
 
         new class () implements PositionFactoryInterface {
             public function createAtStarting(): PositionInterface {}
-
             public function createAtEnding(ReadableInterface $source): PositionInterface {}
-
             public function createFromOffset(
                 ReadableInterface $source,
                 int $offset = PositionInterface::MIN_OFFSET
             ): PositionInterface {}
-
             public function createFromPosition(
                 ReadableInterface $source,
                 int $line = PositionInterface::MIN_LINE,
@@ -42,9 +39,7 @@ class CompatibilityTest extends TestCase
 
         new class () implements PositionInterface {
             public function getOffset(): int {}
-
             public function getLine(): int {}
-
             public function getColumn(): int {}
         };
     }
