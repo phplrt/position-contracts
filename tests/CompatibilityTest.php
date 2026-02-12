@@ -7,6 +7,7 @@ namespace Phplrt\Contracts\Position\Tests;
 use Phplrt\Contracts\Position\PositionFactoryInterface;
 use Phplrt\Contracts\Position\PositionInterface;
 use Phplrt\Contracts\Source\ReadableInterface;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 
 /**
  * Note: Changing the behavior of these tests is allowed ONLY when updating
@@ -14,33 +15,31 @@ use Phplrt\Contracts\Source\ReadableInterface;
  */
 class CompatibilityTest extends TestCase
 {
+    #[DoesNotPerformAssertions]
     public function testPositionFactoryCompatibility(): void
     {
-        self::expectNotToPerformAssertions();
-
         new class () implements PositionFactoryInterface {
             public function createAtStarting(): PositionInterface {}
             public function createAtEnding(ReadableInterface $source): PositionInterface {}
             public function createFromOffset(
                 ReadableInterface $source,
-                int $offset = PositionInterface::MIN_OFFSET
+                int $offset = PositionInterface::MIN_OFFSET,
             ): PositionInterface {}
             public function createFromPosition(
                 ReadableInterface $source,
                 int $line = PositionInterface::MIN_LINE,
-                int $column = PositionInterface::MIN_COLUMN
+                int $column = PositionInterface::MIN_COLUMN,
             ): PositionInterface {}
         };
     }
 
+    #[DoesNotPerformAssertions]
     public function testPositionCompatibility(): void
     {
-        self::expectNotToPerformAssertions();
-
         new class () implements PositionInterface {
-            public function getOffset(): int {}
-            public function getLine(): int {}
-            public function getColumn(): int {}
+            public int $offset;
+            public int $line;
+            public int $column;
         };
     }
 }

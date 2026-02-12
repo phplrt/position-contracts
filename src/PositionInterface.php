@@ -9,38 +9,44 @@ interface PositionInterface
     /**
      * @var int<1, max>
      */
-    public const MIN_LINE = 1;
+    public const int MIN_LINE = 1;
 
     /**
      * @var int<1, max>
      */
-    public const MIN_COLUMN = 1;
+    public const int MIN_COLUMN = 1;
 
     /**
      * @var int<0, max>
      */
-    public const MIN_OFFSET = 0;
+    public const int MIN_OFFSET = 0;
 
     /**
-     * Returns offset in bytes.
+     * Gets offset in bytes.
      *
      * Equivalent to the amount from a line and a column.
      *
-     * @return int<0, max>
+     * @var int<0, max>
      */
-    public function getOffset(): int;
+    public int $offset {
+        get;
+    }
 
     /**
-     * Returns the position line.
+     * Gets the position line.
      *
-     * @return int<1, max>
+     * @var int<1, max>
      */
-    public function getLine(): int;
+    public int $line {
+        get;
+    }
 
     /**
-     * Returns the position column.
+     * Gets the position column.
      *
-     * @return int<1, max>
+     * @var int<1, max>
      */
-    public function getColumn(): int;
+    public int $column {
+        get;
+    }
 }
