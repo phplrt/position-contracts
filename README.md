@@ -4,7 +4,7 @@
 
 ## Position Contracts
 
-A set of interfaces for abstraction over parsers.
+A set of interfaces for abstraction over source positions.
 
 ### Resources
 
